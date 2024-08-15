@@ -1,16 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        task1();
+        int INITIAL_DEPOSIT = 15000;
+
+        task1(INITIAL_DEPOSIT);
         System.out.println("__________________________");
         task2();
         System.out.println("__________________________");
         task3();
         System.out.println("__________________________");
-        task4();
+        task4(INITIAL_DEPOSIT);
         System.out.println("__________________________");
-        task5();
+        task5(INITIAL_DEPOSIT);
         System.out.println("__________________________");
-        task6();
+        task6(INITIAL_DEPOSIT);
         System.out.println("__________________________");
         task7();
         System.out.println("__________________________");
@@ -21,12 +23,11 @@ public class Main {
         return amount / 100 * percent;
     }
 
-    public static void task1() {
-        int money = 15000;
+    public static void task1(int iniDep) {
         int total = 0;
         int month = 1;
         while (total <= 2_459_000) {
-            total += money;
+            total += iniDep;
             total += total / 100;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
             month++;
@@ -60,29 +61,27 @@ public class Main {
         }
     }
 
-    public static void task4() {
-        int money = 15000;
+    public static void task4(int iniDep) {
         int percent = 7;
         int goal = 12_000_000;
         int result = 0;
         int month = 0;
         do {
-            result += money;
-            result += percentageCalculation(money, percent);
+            result += iniDep;
+            result += percentageCalculation(iniDep, percent);
             month++;
             System.out.println("Месяц " + month + ". Накоплено: " + result);
         } while (result <= goal);
     }
 
-    public static void task5() {
-        int money = 15000;
+    public static void task5(int iniDep) {
         int percent = 7;
         int goal = 12_000_000;
         int result = 0;
         int month = 0;
         do {
-            result += money;
-            result += percentageCalculation(money, percent);
+            result += iniDep;
+            result += percentageCalculation(iniDep, percent);
             month++;
             if (month % 6 == 0 || result > goal) {
                 System.out.println("Месяц " + month + ". Накоплено: " + result);
@@ -90,16 +89,15 @@ public class Main {
         } while (result <= goal);
     }
 
-    public static void task6() {
-        int money = 15000;
+    public static void task6(int iniDep) {
         int percent = 7;
         int years = 9;
         int month1 = years * 12;
         int month = 0;
         int result = 0;
         do {
-            result += money;
-            result += percentageCalculation(money, percent);
+            result += iniDep;
+            result += percentageCalculation(iniDep, percent);
             month++;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + ". Накоплено: " + result);
