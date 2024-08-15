@@ -17,12 +17,17 @@ public class Main {
         task8();
     }
 
+    public static int percentageCalculation(int amount, int percent) {
+        return amount / 100 * percent;
+    }
+
     public static void task1() {
         int money = 15000;
         int total = 0;
         int month = 1;
         while (total <= 2_459_000) {
             total += money;
+            total += total / 100;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
             month++;
         }
@@ -63,7 +68,7 @@ public class Main {
         int month = 0;
         do {
             result += money;
-            result += money / 100 * percent;
+            result += percentageCalculation(money, percent);
             month++;
             System.out.println("Месяц " + month + ". Накоплено: " + result);
         } while (result <= goal);
@@ -77,7 +82,7 @@ public class Main {
         int month = 0;
         do {
             result += money;
-            result += money / 100 * percent;
+            result += percentageCalculation(money, percent);
             month++;
             if (month % 6 == 0 || result > goal) {
                 System.out.println("Месяц " + month + ". Накоплено: " + result);
@@ -94,7 +99,7 @@ public class Main {
         int result = 0;
         do {
             result += money;
-            result += money / 100 * percent;
+            result += percentageCalculation(money, percent);
             month++;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + ". Накоплено: " + result);
@@ -117,7 +122,7 @@ public class Main {
         int lastYears = currentYear - 200;
         int nextYears = currentYear + 100;
         for (int i = 0; i <= nextYears; i += emergencePeriod) {
-            if (i > lastYears && i < nextYears){
+            if (i > lastYears && i < nextYears) {
                 System.out.println(i);
             }
         }
